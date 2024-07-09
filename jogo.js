@@ -5,7 +5,12 @@ function ajustaTamanhoJogo(){
 	altura = window.innerHeight
 	largura = window.innerWidth
 
-	console.log(altura, largura)
+	console.log(largura, altura)
 }
 
 ajustaTamanhoJogo()
+
+var posicaoX = Math.floor(Math.random() * largura)
+var posicaoY = Math.floor(Math.random() * altura)
+
+console.log(posicaoX, posicaoY)
