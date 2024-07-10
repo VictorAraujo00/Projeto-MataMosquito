@@ -9,21 +9,27 @@ function ajustaTamanhoJogo(){
 ajustaTamanhoJogo()
 
 //Gerando posições aleatorias
-var posicaoX = Math.floor(Math.random() * largura) - 90
-var posicaoY = Math.floor(Math.random() * altura) - 90
+function posicaoRandomica(){
+	var posicaoX = Math.floor(Math.random() * largura) - 90
+	var posicaoY = Math.floor(Math.random() * altura) - 90
 
-posicaoX = posicaoX < 0 ? 0 : posicaoX
-posicaoY = posicaoY < 0 ? 0 : posicaoY
+	posicaoX = posicaoX < 0 ? 0 : posicaoX
+	posicaoY = posicaoY < 0 ? 0 : posicaoY
 
 
-//Criando elemento html
-var mosquito = document.createElement('img')
-mosquito.src = 'imagens/mosquito.png'
-mosquito.className = tamanhoAleatorio() + ' ' + ladoAleatorio()
-mosquito.style.position = 'absolute'
-mosquito.style.left = posicaoX + 'px'
-mosquito.style.top = posicaoY + 'px'
-document.body.appendChild(mosquito)
+	//Criando elemento html
+	var mosquito = document.createElement('img')
+	mosquito.src = 'imagens/mosquito.png'
+	mosquito.className = tamanhoAleatorio() + ' ' + ladoAleatorio()
+	mosquito.style.position = 'absolute'
+	mosquito.style.left = posicaoX + 'px'
+	mosquito.style.top = posicaoY + 'px'
+	document.body.appendChild(mosquito)
+}
+
+setInterval(function(){
+	posicaoRandomica()
+}, 1000)
 
 function tamanhoAleatorio(){
 	var classe = Math.floor(Math.random() * 3)
