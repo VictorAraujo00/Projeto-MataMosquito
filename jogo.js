@@ -33,12 +33,15 @@ function posicaoRandomica(){
 	mosquito.style.left = posicaoX + 'px'
 	mosquito.style.top = posicaoY + 'px'
 	mosquito.id = 'mosquito'
+	mosquito.onclick = function(){
+		this.remove()
+	}
 	document.body.appendChild(mosquito)
 }
 
 setInterval(function(){
 	posicaoRandomica()
-}, 1000)
+}, 2000)
 
 function tamanhoAleatorio(){
 	var classe = Math.floor(Math.random() * 3)
