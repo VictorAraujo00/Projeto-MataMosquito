@@ -1,5 +1,6 @@
 var altura = 0
 var largura = 0
+var vidas = 3
 
 function ajustaTamanhoJogo(){
 	altura = window.innerHeight
@@ -15,6 +16,14 @@ function posicaoRandomica(){
 
 	if(document.getElementById('mosquito')){
 		document.getElementById('mosquito').remove()
+		
+		if(vidas >= 1){
+			document.getElementById('v'+vidas).src = 'imagens/coracao_vazio.png'
+			vidas--
+		}else{
+			alert('Perdeu troxaaaaaa')
+		}
+
 	}
 
 
