@@ -19,7 +19,7 @@ posicaoY = posicaoY < 0 ? 0 : posicaoY
 //Criando elemento html
 var mosquito = document.createElement('img')
 mosquito.src = 'imagens/mosquito.png'
-mosquito.className = tamanhoAleatorio()
+mosquito.className = tamanhoAleatorio() + ' ' + ladoAleatorio()
 mosquito.style.position = 'absolute'
 mosquito.style.left = posicaoX + 'px'
 mosquito.style.top = posicaoY + 'px'
@@ -41,7 +41,7 @@ function tamanhoAleatorio(){
 
 function ladoAleatorio(){
 
-	var classe = Math.floor(Math.random * 2)
+	var classe = Math.floor(Math.random() * 2)
 
 	if(classe == 0){
 		return 'ladoA'
