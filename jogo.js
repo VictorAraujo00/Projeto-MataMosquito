@@ -38,3 +38,16 @@ function tamanhoAleatorio(){
 		return 'mosquito3'
 	}
 }
+
+function ladoAleatorio(){
+
+	var classe = Math.floor(Math.random * 2)
+
+	if(classe == 0){
+		return 'ladoA'
+	}else{
+		return 'ladoB'
+	}
+
+
+}
