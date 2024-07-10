@@ -21,7 +21,7 @@ function posicaoRandomica(){
 			document.getElementById('v'+vidas).src = 'imagens/coracao_vazio.png'
 			vidas--
 		}else{
-			alert('Perdeu troxaaaaaa')
+			window.location.href = 'fim_de_jogo.html'
 		}
 
 	}
