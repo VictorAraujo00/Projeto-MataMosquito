@@ -3,6 +3,22 @@ var largura = 0
 var vidas = 3
 var tempo = 10
 
+var mosquitoTempo = 0
+
+var nivel = window.location.search
+nivel = nivel.replace('?','')
+
+
+if(nivel == 'normal'){
+
+	mosquitoTempo = 1500
+
+}else if(nivel == 'dificil'){
+	mosquitoTempo = 1000
+}else{
+	mosquitoTempo = 750
+}
+
 
 function ajustaTamanhoJogo(){
 	altura = window.innerHeight
@@ -67,7 +83,7 @@ function posicaoRandomica(){
 
 var gerarMosquito = setInterval(function(){
 	posicaoRandomica()
-}, 2000)
+}, mosquitoTempo)
 
 function tamanhoAleatorio(){
 	var classe = Math.floor(Math.random() * 3)
