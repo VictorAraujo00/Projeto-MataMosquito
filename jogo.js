@@ -1,6 +1,8 @@
 var altura = 0
 var largura = 0
 var vidas = 3
+var tempo = 10
+
 
 function ajustaTamanhoJogo(){
 	altura = window.innerHeight
@@ -8,6 +10,12 @@ function ajustaTamanhoJogo(){
 }
 
 ajustaTamanhoJogo()
+
+document.getElementById('cronometro').innerHTML = tempo
+var cronometro = setInterval(function(){
+	tempo -= 1
+	document.getElementById('cronometro').innerHTML = tempo
+}, 1000)
 
 //Gerando posições aleatorias
 function posicaoRandomica(){
