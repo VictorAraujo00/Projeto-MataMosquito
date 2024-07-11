@@ -11,10 +11,19 @@ function ajustaTamanhoJogo(){
 
 ajustaTamanhoJogo()
 
+//Cronometro
 document.getElementById('cronometro').innerHTML = tempo
 var cronometro = setInterval(function(){
 	tempo -= 1
-	document.getElementById('cronometro').innerHTML = tempo
+	if(tempo < 0){
+		clearInterval(gerarMosquito)
+		clearInterval(cronometro)
+		alert('Vitoria')
+
+	}else{
+		document.getElementById('cronometro').innerHTML = tempo
+	}
+
 }, 1000)
 
 //Gerando posições aleatorias
@@ -56,7 +65,7 @@ function posicaoRandomica(){
 	document.body.appendChild(mosquito)
 }
 
-setInterval(function(){
+var gerarMosquito = setInterval(function(){
 	posicaoRandomica()
 }, 2000)
 
